@@ -1,0 +1,33 @@
+<ion-view view-title="Profile">
+	<ion-content ng-controller="profileCtrl">
+		<div class="row">
+			<div class="col col-30">
+				<img ng-src="{{ profile.photo }}" width="100%">
+			</div>
+			<div class="col col-70" style="text-align:center">
+				<p style="font-weight: bold;font-size: 40px;margin-top:20px">{{ profile.recommendation}}</p>
+				<p style="margin-top:20px">Recommendations</p>
+				<p style="margin-top:20px">Schedule On</p>
+				<p style="margin-top:20px">{{ profile.schedule }}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<p style="font-weight: bold;font-size: 20px;">{{ profile.name }}</p>
+				<p>{{ profile.area }}</p>
+				<p>{{ profile.speciality }}</p>
+				<p>{{ profile.currency + " " + profile.rate }}</p>
+				<p>{{ profile.experience + " Year(s) experience" }}</p>
+				<p>{{ profile.description }}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col" style="text-align:center">
+				<iframe width="300" height="170" frameborder="0" marginheight="0" marginwidth="0" ng-src="{{ maps }}">
+				</iframe>
+			</div>
+		</div>
+
+
+	</ion-content>
+</ion-view>

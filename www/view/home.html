@@ -1,0 +1,18 @@
+<ion-view view-title="Home">
+	<ion-content ng-controller="homeCtrl">
+		<div class="list list-inset">
+		  <label class="item item-input">
+		    <i class="icon ion-search placeholder-icon"></i>
+		    <input type="text" placeholder="Search Location" ng-model="search" ng-change="setList(search)">
+		  </label>
+		  <ul class="list" ng-show="search.length > 0" ng-hide="selected">
+		    <li class="item" ng-repeat="location in filterLoc" ng-click="setModal(location)">{{ location.area + ", " + location.city }}</li>
+		  </ul>
+		</div>
+		<div class="list list-inset">
+		  <button class="button" style="float:right" ng-click="findDoctor()">
+		    Find Doctor
+		  </button>
+		</div>
+	</ion-content>
+</ion-view>

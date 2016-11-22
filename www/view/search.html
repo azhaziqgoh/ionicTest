@@ -1,0 +1,27 @@
+<ion-view view-title="Search">
+	<ion-content ng-controller="searchCtrl">
+		<div class="row">
+			<div class="col">
+				<div class="card" ng-repeat="item in currentShowList">
+				  <div class="item item-text-wrap" style="display:inline-block">
+				    <img ng-src="{{ item.photo }}" style="float:left;cursor:pointer" width="90px" ng-click="gotoProfile(item.id)">
+				    <div style="float:right;padding-left:15px">
+					    <p style="font-weight:bold;cursor:pointer" ng-click="gotoProfile(item.id)">{{ item.name }}</p>
+					    <p>{{ item.area }}</p>
+					    <p>{{ item.speciality }}</p>
+					    <p>{{ item.currency + " " + item.rate }}</p>
+				    </div>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<select ng-model="currentPage" ng-change="changeList()" style="float:right;margin-right:10px">
+		      		<option ng-repeat="list in listByPages">{{ $index + 1 }}</option>
+		    	</select>
+	    	</div>
+		</div>
+		
+	</ion-content>
+</ion-view>
